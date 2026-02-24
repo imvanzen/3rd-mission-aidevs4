@@ -1,0 +1,23 @@
+{
+  "name": "weryfikacja-aidevs",
+  "version": "1.0.0",
+  "description": "Verification script for aidevs - 4 questions in 15 seconds",
+  "type": "module",
+  "scripts": {
+    "run": "tsx src/index.ts",
+    "verify": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^1.0.0",
+    "ai": "^4.0.0",
+    "dotenv": "^16.4.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
