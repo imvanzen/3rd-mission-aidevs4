@@ -22,6 +22,12 @@ export const getQuestionsAndToken = tool({
   },
 });
 
+type VerifyAnswersResponse = {
+  status: "CORRECT" | "INCORRECT";
+  is_correct: boolean[];
+  flag: string;
+};
+
 export const verifyAnswers = tool({
   description:
     "Submit the 4 answers together with the token. " +
@@ -41,9 +47,10 @@ export const verifyAnswers = tool({
     });
     const text = await res.text();
     try {
+      console.log(text);
       return JSON.parse(text);
     } catch {
-      return { status: "ERROR", httpStatus: res.status, body: text };
+      return { status: "INCORRECT", flag: text };
     }
   },
 });
